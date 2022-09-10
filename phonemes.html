@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/phonemes.js"></script>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-md-6">
+                    <h1>Allophone Distribution Analyzer</h1>
+                    <div>
+                        This tool can be used to visualize the distributions of sounds within a sample of words,
+                        showing the environments and minimal pairs (if any), assisting phonologists in determining
+                        whether or not sounds are allophones of the same phoneme.
+                        <br><br>
+                        Input the sounds in the first field.
+                        Input the sample of words in the second field.
+                        Each entry in each field must be separated by a space.
+                        Each sound in either field must be represented in one of these ways:
+                        <ul>
+                            <li>a single character (e.g. p, ɹ, æ, ä)</li>
+                            <li>a single character followed by exactly one diacritic from <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet#Diacritics_and_prosodic_notation">the first table here</a> or either a regular or triangular colon (e.g. t̪, tʰ, eː)</li>
+                            <li>two characters connected by a tie bar (e.g. t͡ʃ, p͡f)</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <label>Sounds to analyze:</label>
+                    <input id="allophones" name="allophones" value="t tʰ d">
+                    <br>
+                    <label>Words:</label>
+                    <br>
+                    <textarea id="words" class="form-control" value="tat tʰat adate adatʰe"></textarea>
+                    <br>
+                    <button type="button" class="btn btn-primary" onclick="analyze()">Run</button>
+                </div>
+                <div class="col col-md-6">
+                    <h2>Minimal Pairs:</h2>
+                    <div id="minPairChartContainer">
+
+                    </div>
+                    <h2>Distributions:</h2>
+                    <div id="distChartContainer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
